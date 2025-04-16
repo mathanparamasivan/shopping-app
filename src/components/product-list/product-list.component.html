@@ -1,0 +1,25 @@
+<table class="product-table">
+    <thead>
+      <tr>
+        <th>Image</th>
+        <th>Name</th>
+        <th>Features</th>
+        <th>Price</th>
+        <th>Rating</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of items" (click)="goToDetail()" class="clickable-row">
+        <td><img [src]="item.imageUrl" alt="{{ item.name }}" /></td>
+        <td>{{ item.name }}</td>
+        <td>
+          <ul>
+            <li *ngFor="let f of items">{{ f }}</li>
+          </ul>
+        </td>
+        <td>₹{{ item.price }}</td>
+        <td>⭐ 5 </td>
+      </tr>
+    </tbody>
+  </table>
+  
