@@ -1,5 +1,5 @@
 .purchase-msg {
-    position: fixed;
+    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -8,4 +8,14 @@
     color: blue;
     text-align: center;
   }
+
+  .flex-container {
+    display: flex;
+    justify-content: center;   /* Horizontal center */
+    align-items: center;       /* Vertical center */
+    min-height: 100vh;
+    overflow: hidden;
+    /* Full viewport height */
+  }
+  
   
