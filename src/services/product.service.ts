@@ -8,6 +8,7 @@ export interface Product {
   price: number;
   seller: Seller;
   imageUrl:string;
+  rating:number;
   featureDescMap: {
     [key: string]: string;
   }
