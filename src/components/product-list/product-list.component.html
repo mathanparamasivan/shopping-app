@@ -9,15 +9,15 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let item of items" (click)="goToDetail()" class="clickable-row">
-        <td><img [src]="item.imageUrl" alt="{{ item.name }}" /></td>
-        <td>{{ item.name }}</td>
+      <tr *ngFor="let product of productList" (click)="goToDetail()" class="clickable-row">
+        <td><img [src]="product.imageUrl" alt="{{ product.productName }}" /></td>
+        <td>{{ product.productName }}</td>
         <td>
           <ul>
-            <li *ngFor="let f of items">{{ f }}</li>
+            <li *ngFor="let feature of product.featureDescMap | keyvalue">{{ feature.key }}</li>
           </ul>
         </td>
-        <td>₹{{ item.price }}</td>
+        <td>₹{{ product.price }}</td>
         <td>⭐ 5 </td>
       </tr>
     </tbody>

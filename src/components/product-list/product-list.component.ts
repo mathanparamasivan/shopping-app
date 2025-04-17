@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-
+import { ProductService, Product } from '../../services/product.service';
 import { Router } from '@angular/router';
-
+import { Observable, Subject} from 'rxjs';
+import { takeUntil} from 'rxjs/operators';
 
 @Component({
   selector: 'app-product-list',
@@ -12,9 +13,23 @@ import { Router } from '@angular/router';
   imports: [CommonModule, RouterModule],
   styleUrls: ['./product-list.component.css']
 })
-export class ProductListComponent {
+export class ProductListComponent implements OnInit {
   searchTerm: string = '';
-  constructor(private router: Router) {}
+  constructor(
+    private productService: ProductService,
+    private router: Router
+  ) {}
+  products$!: Observable<Product[]>;
+  productList:Product[] = [
+    
+  ];
+
+  private destroy$ = new Subject<void>();
+
+  ngOnInit(): void {
+    console.log('Component initialized');
+    this.getProducts();
+  }
 
   items = [
     {
@@ -46,5 +61,22 @@ export class ProductListComponent {
   goToDetail(){
     this.router.navigate(['/product-detail']);
   }
-}
 
+  
+    getProducts(){
+      this.productService.getAllProducts()
+      .pipe(takeUntil(this.destroy$))
+      .subscribe({
+        next: (products) => {
+          this.productList = products;
+          console.log('Fetched products:', products);
+        },
+        error: (err) => {
+          console.error('Failed to fetch products', err);
+        }
+      });
+      console.log(this.productList);
+      console.log(this.products$);
+
+  }
+}
