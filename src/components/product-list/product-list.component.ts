@@ -58,8 +58,8 @@ export class ProductListComponent implements OnInit {
     );
   }
 
-  goToDetail(){
-    this.router.navigate(['/product-detail']);
+  goToDetail(id:number){
+    this.router.navigate(['/product-detail', id]);
   }
 
   

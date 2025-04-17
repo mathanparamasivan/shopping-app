@@ -9,7 +9,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let product of productList" (click)="goToDetail()" class="clickable-row">
+      <tr *ngFor="let product of productList" (click)="goToDetail(product.id)" class="clickable-row">
         <td><img [src]="product.imageUrl" alt="{{ product.productName }}" /></td>
         <td>{{ product.productName }}</td>
         <td>
