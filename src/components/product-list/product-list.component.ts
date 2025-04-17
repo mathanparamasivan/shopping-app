@@ -28,7 +28,7 @@ export class ProductListComponent implements OnInit {
 
   ngOnInit(): void {
     console.log('Component initialized');
-    this.getProducts();
+    this.getProducts()
   }
 
   items = [
