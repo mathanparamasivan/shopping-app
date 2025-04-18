@@ -1,0 +1,36 @@
+<div style="display: flex; justify-content: center; align-items: center; height: 100vh; background: #f7f9fc;">
+    <form (ngSubmit)="login()" style="background: #ffffff; padding: 2rem 3rem; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); width: 320px;">
+      <h2 style="text-align: center; color: #2c3e50; margin-bottom: 1.5rem;">Login</h2>
+  
+      <div style="margin-bottom: 1rem;">
+        <label for="username" style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Username</label>
+        <input
+          type="text"
+          id="username"
+          name="username"
+          [(ngModel)]="username"
+          style="width: 100%; padding: 0.5rem; border: 1px solid #ccc; border-radius: 6px;"
+          required
+        />
+      </div>
+  
+      <div style="margin-bottom: 1.5rem;">
+        <label for="password" style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Password</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          [(ngModel)]="password"
+          style="width: 100%; padding: 0.5rem; border: 1px solid #ccc; border-radius: 6px;"
+          required
+        />
+      </div>
+  
+      <button type="submit" style="width: 100%; background-color: #3498db; color: white; padding: 0.6rem; border: none; border-radius: 6px; font-weight: bold; cursor: pointer;">
+        Login
+      </button>
+  
+      <p *ngIf="loginFailed" style="color: red; text-align: center; margin-top: 1rem;">Invalid credentials</p>
+    </form>
+  </div>
+  
