@@ -5,6 +5,7 @@ import { ProductService, Product } from '../../services/product.service';
 import { Router } from '@angular/router';
 import { Observable, Subject} from 'rxjs';
 import { takeUntil} from 'rxjs/operators';
+import { CanComponentDeactivate } from '../../guards/can-deactivate.guard';
 
 @Component({
   selector: 'app-product-list',
@@ -13,7 +14,7 @@ import { takeUntil} from 'rxjs/operators';
   imports: [CommonModule, RouterModule],
   styleUrls: ['./product-list.component.css']
 })
-export class ProductListComponent implements OnInit {
+export class ProductListComponent implements OnInit, CanComponentDeactivate {
   searchTerm: string = '';
   constructor(
     private productService: ProductService,
@@ -25,6 +26,16 @@ export class ProductListComponent implements OnInit {
   ];
 
   private destroy$ = new Subject<void>();
+  formDirty = true;
+
+
+
+  canDeactivate(): boolean {
+    if (this.formDirty) {
+      return confirm('You have unsaved changes. Do you really want to leave?');
+    }
+    return true;
+  }
 
   ngOnInit(): void {
     console.log('Component initialized');
