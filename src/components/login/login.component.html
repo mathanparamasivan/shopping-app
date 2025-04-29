@@ -3,7 +3,7 @@
     <h1>Login</h1>
   </div>
   <div class="loginform">
-    <form #loginForm="ngForm" (ngSubmit)="onLogin() ">
+    <form #loginForm="ngForm" (ngSubmit)="onLogin(username, password) ">
       <div class = 'labelgroup'>
         <label>Username</label>
         <input type="text" name="username" [(ngModel)]="username" required  #usernameRef="ngModel"/>
@@ -26,3 +26,13 @@
       </div>
     </form>
   </div>
+
+  <div class="signup-div">
+    <div class="signup-link">
+      <p>Don't have an account? <a routerLink="/signup">Sign up here</a></p>
+    </div>
+  </div>
+
+ 
+
+  

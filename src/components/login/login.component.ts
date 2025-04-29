@@ -18,17 +18,11 @@ export class LoginComponent {
 
   constructor(private authService: AuthService, private router: Router) {}
 
-  onLogin() {
-    window.alert('Form submitted');
-   // console.log('Form valid:', form.valid);
-    //console.log('Form data:', form.value);
-
-    //if (form.valid) {
-    //   if (this.authService.login(this.username, this.password)) {
-    //     this.router.navigate(['/products']);
-    //   } else {
-    //     this.loginFailed = true;
-    //   }
-    // }
+  onLogin(username:string, password:string ) {
+      if (this.authService.login(this.username, this.password)) {
+        this.router.navigate(['/products']);
+      } else {
+        this.loginFailed = true;
+      }
   }
 }
