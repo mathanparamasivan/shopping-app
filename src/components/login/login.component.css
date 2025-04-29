@@ -26,8 +26,10 @@ h1 {
 
 .heading {
   display: flex;
-  justify-content: center;  /* Horizontally center the .loginform */
-  margin: 0;                /* Remove default margin */
+  width: 100%; 
+  justify-content: center;
+  align-content: center;
+  text-align: center;               /* Remove default margin */
 }
 
 label {
