@@ -1,32 +1,28 @@
-<div class="login-wrapper">
-    <form (ngSubmit)="login()" class="login-form">
-      <h2>Login</h2>
   
-      <div class="form-group">
-        <label for="username">Username</label>
-        <input
-          type="text"
-          id="username"
-          name="username"
-          [(ngModel)]="username"
-          required
-        />
+  <div class="heading">
+    <h1>Login</h1>
+  </div>
+  <div class="loginform">
+    <form #loginForm="ngForm" (ngSubmit)="onLogin() ">
+      <div class = 'labelgroup'>
+        <label>Username</label>
+        <input type="text" name="username" [(ngModel)]="username" required  #usernameRef="ngModel"/>
+        <div *ngIf="usernameRef.invalid && usernameRef.touched" class="error-msg">
+          Username is required.
+        </div>
       </div>
-  
-      <div class="form-group">
-        <label for="password">Password</label>
-        <input
-          type="password"
-          id="password"
-          name="password"
-          [(ngModel)]="password"
-          required
-        />
+
+      <div class = 'labelgroup'>
+        <label>Password</label>
+        <input type="password" name="password" [(ngModel)]="password" required minlength="5" #passwordRef="ngModel"/>
+        <div *ngIf="passwordRef.invalid && passwordRef.touched" class="error-msg">
+          <span *ngIf="passwordRef.errors?.['required']">Password is required.</span>
+          <span *ngIf="passwordRef.errors?.['minlength']">Password must be at least 6 characters.</span>
+
+        </div>
       </div>
-  
-      <button type="submit">Login</button>
-  
-      <p *ngIf="loginFailed" class="error-msg">Invalid credentials</p>
+      <div>  
+        <button type="submit" [disabled]="loginForm.invalid">Login</button>
+      </div>
     </form>
   </div>
-  

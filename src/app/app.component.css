@@ -17,4 +17,22 @@
     margin-top: 70px; /* same as header height */
     padding: 1rem;
   }
+  .layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  .header, .footer {
+    background-color: #f8f9fa;
+    padding: 1rem;
+    z-index: 1;
+  }
+  
+  .main-content {
+    flex: 1;
+    padding: 2rem;
+    background-color: #fff;
+    z-index: 0;
+  }
   

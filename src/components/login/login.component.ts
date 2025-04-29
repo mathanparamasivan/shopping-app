@@ -1,4 +1,4 @@
-import { Component, HostListener } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { FormsModule } from '@angular/forms';
@@ -18,11 +18,17 @@ export class LoginComponent {
 
   constructor(private authService: AuthService, private router: Router) {}
 
-  login() {
-    if (this.authService.login(this.username, this.password)) {
-      this.router.navigate(['/products']);
-    } else {
-      this.loginFailed = true;
-    }
+  onLogin() {
+    window.alert('Form submitted');
+   // console.log('Form valid:', form.valid);
+    //console.log('Form data:', form.value);
+
+    //if (form.valid) {
+    //   if (this.authService.login(this.username, this.password)) {
+    //     this.router.navigate(['/products']);
+    //   } else {
+    //     this.loginFailed = true;
+    //   }
+    // }
   }
 }

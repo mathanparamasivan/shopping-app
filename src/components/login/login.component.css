@@ -1,60 +1,71 @@
-.login-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background: #f7f9fc;
-  }
-  
-  .login-form {
-    background: #ffffff;
-    padding: 2rem 3rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    width: 320px;
-  }
-  
-  .login-form h2 {
-    text-align: center;
-    color: #2c3e50;
-    margin-bottom: 1.5rem;
-  }
-  
-  .form-group {
-    margin-bottom: 1rem;
-  }
-  
-  .form-group:last-of-type {
-    margin-bottom: 1.5rem;
-  }
-  
-  .form-group label {
-    display: block;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-  }
-  
-  .form-group input {
-    width: 100%;
-    padding: 0.5rem;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-  }
-  
-  button[type="submit"] {
-    width: 100%;
-    background-color: #3498db;
-    color: white;
-    padding: 0.6rem;
-    border: none;
-    border-radius: 6px;
-    font-weight: bold;
-    cursor: pointer;
-  }
-  
-  .error-msg {
-    color: red;
-    text-align: center;
-    margin-top: 1rem;
-  }
-  
+form {
+  width: 80%; 
+  max-width: 600px;
+  padding: 20px;
+  background-color: lightgray;
+  text-align: center; 
+
+}
+.loginform {
+  display: flex;
+  justify-content: center;  /* Horizontally center the .loginform */
+  align-items: center;      /* Vertically center the .loginform */
+  margin: 0;
+                /* Remove default margin */
+}
+
+h1 {
+  width: 80%; 
+  max-width: 600px;
+  padding: 20px;
+  background-color: lightgray;
+  text-align: center; 
+  margin-bottom: 0; /* Or use a smaller value like 5px if you want a tiny gap */
+
+}
+
+.heading {
+  display: flex;
+  justify-content: center;  /* Horizontally center the .loginform */
+  margin: 0;                /* Remove default margin */
+}
+
+label {
+  font-size: 14px;
+  font-weight: bold;
+  display: block; 
+  margin-bottom: 5px;
+  color: #333;
+}
+
+input {
+  width: 100%;  
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc; 
+  border-radius: 4px; 
+  box-sizing: border-box; 
+  margin-bottom: 10px;
+}
+
+input:focus {
+  border-color: #007BFF;
+  outline: none;
+}
+
+button[type="submit"] {
+  width: 100%;
+  background-color: #3498db;
+  color: white;
+  padding: 0.6rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.error-msg {
+  color: red;
+  text-align: center;
+  margin-top: 1rem;
+}
