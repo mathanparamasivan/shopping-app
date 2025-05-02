@@ -1,1 +1,35 @@
-<p>signup works!</p>
+
+<div class="signupform">  
+  <h2>Signup</h2>
+</div>
+<div class="signupform">
+<form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label>Username:</label>
+    <input type="text" formControlName="username" />
+    <div *ngIf="signupForm.get('username')?.touched && signupForm.get('username')?.invalid" class="error-msg">
+      Username is required.
+    </div>
+  </div>
+
+  <div>
+    <label>Password:</label>
+    <input type="password" formControlName="password" />
+    <div *ngIf="signupForm.get('password')?.touched && signupForm.get('password')?.invalid" class="error-msg">
+      <span *ngIf="signupForm.get('password')?.errors?.['required']">Password is required.</span>
+      <span *ngIf="signupForm.get('password')?.errors?.['minlength']">Minimum 6 characters required.</span>
+    </div>
+  </div>
+
+  <div formArrayName="hobbies">
+    <label>Hobbies:</label>
+    <div *ngFor="let hobby of hobbies.controls; let i = index">
+      <input [formControlName]="i" />
+      <button type="button" (click)="removeHobby(i)" *ngIf="hobbies.length > 1">Remove</button>
+    </div>
+    <button type="button" (click)="addHobby()">Add Hobby</button>
+  </div>
+
+  <button type="submit" [disabled]="signupForm.invalid">Sign Up</button>
+</form>
+</div>

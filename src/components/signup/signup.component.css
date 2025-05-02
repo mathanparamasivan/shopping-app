@@ -1,0 +1,93 @@
+form {
+    width: 80%; 
+    max-width: 600px;
+    padding: 20px;
+    background-color: lightgray;
+    text-align: center; 
+  
+  }
+  .signupform {
+    background-color: lightgray;
+    display: flex;
+    justify-content: center;  /* Horizontally center the .loginform */
+    align-items: center;      /* Vertically center the .loginform */
+    margin-left: 20%;
+    margin-right: 20%;
+
+                  /* Remove default margin */
+  }
+  
+  h1 {
+    width: 80%; 
+    max-width: 600px;
+    padding: 20px;
+    background-color: lightgray;
+    text-align: center; 
+    margin-bottom: 0; /* Or use a smaller value like 5px if you want a tiny gap */
+  
+  }
+  
+  .heading {
+    display: flex;
+    width: 100%; 
+    justify-content: center;
+    align-content: center;
+    text-align: center;               /* Remove default margin */
+  }
+  
+  label {
+    font-size: 14px;
+    font-weight: bold;
+    display: block; 
+    margin-bottom: 5px;
+    color: #333;
+  }
+  
+  input {
+    width: 100%;  
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+    box-sizing: border-box; 
+    margin-bottom: 10px;
+  }
+  
+  input:focus {
+    border-color: #007BFF;
+    outline: none;
+  }
+  
+  button{
+    width: 100%;
+    background-color: #3498db;
+    color: white;
+    padding: 0.6rem;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 1%;
+  }
+  
+  .error-msg {
+    color: red;
+    text-align: center;
+    margin-top: 1rem;
+  }
+  
+  .signup-div {
+    display: flex;
+    width: 100%; 
+    padding: 5px;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .signup-link a {
+    color: blue;
+    text-decoration: underline;
+  }
+
+  
+  
